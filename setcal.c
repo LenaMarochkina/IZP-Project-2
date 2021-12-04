@@ -271,22 +271,19 @@ bool Reflexive(relation *R, universe *Universe) {
 //Symmetric R
 bool Symmetric(relation *R) {
     for (int i = 0; i < R->size; ++i) {
-        for (int j = 0; j < R->size; ++j) {
-            if ((strcmp(R->elements[i][0], R->elements[j][1]) != 0) && (j != R->size - 1)) {
-                continue;
-            } else if (strcmp(R->elements[i][0], R->elements[R->size - i - 1][1]) != 0) {
-                return false;
-            } else {
-                if (strcmp(R->elements[i][1], R->elements[j][0]) == 0) {
-                    break;
-                } else {
-                    continue;
-                }
+        bool found = false;
+        for(int j = i+1; j < R->size; ++j){
+            if((strcmp(R->elements[i][0], R->elements[j][1]) == 0) && (strcmp(R->elements[i][1], R->elements[j][0]) == 0)) {
+                found = true;
+                break;
             }
         }
+        if(!found) {
+            return false;
+        }
     }
-    return true;
 }
+            
 
 //Antisymmetric R
 bool Antisymmetric(relation *R) {
