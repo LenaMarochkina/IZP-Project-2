@@ -348,7 +348,6 @@ bool Function(relation *R) {
 
 //Domain R
 void Domain(relation *R) {
-    if (Function(R)) {
         printf("%s ", R->elements[0][0]);
         for (int i = 1; i < R->size; ++i) {
             for (int j = 0; j < i; j++) {
@@ -361,14 +360,10 @@ void Domain(relation *R) {
                 }
             }
         }
-    } else {
-        printf("Relation is not function!\n");
-    }
 }
 
 //codomain R
 void Codomain(relation *R) {
-    if(Function(R)){
         printf("S %s ", R->elements[0][1]);
         for (int i = 1; i < R->position; ++i) {
             for (int j = 0; j < i; j++){
@@ -381,9 +376,6 @@ void Codomain(relation *R) {
                 }
             }
         }
-    } else {
-        printf("Relation is not function!\n");
-    }
 }
 
 //injective R, A, B
