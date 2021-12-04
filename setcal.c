@@ -228,11 +228,6 @@ void Minus(set *A, set *B) {
             }
         }
     }
-    if(B->size == 0) {
-        for(int i = 0; i < A->size; ++i) {
-            printf("%s", A->elements[i]);
-        }
-    }
     printf("\n");
 }
 
@@ -308,7 +303,11 @@ bool Antisymmetric(relation *R) {
             }
         }
     }
-    return anti > 0;
+   if(anti > 0) {
+       return false;
+   } else {
+       return true;
+   };
 }
 
 //Transitive R
