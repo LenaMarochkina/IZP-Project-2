@@ -220,7 +220,7 @@ void Minus(set *A, set *B) {
             }
         }
         if (!found) {
-            printf("%s", A->elements[i]);
+            printf("%s ", A->elements[i]);
         }
     }
     printf("\n");
