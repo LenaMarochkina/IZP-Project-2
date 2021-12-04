@@ -122,31 +122,30 @@ void Card(set *A) {
 void Union(set *A, set *B) {
     printf("S ");
     if(A->size != 0) {
-    for (int k = 0; k < A->size; k++) {
-        printf("%s ", A->elements[k]);
-        // printf("elem: %")
-    }
-    for (int i = 0; i < B->size; ++i) {
-        for (int j = 0; j < A->size; ++j) {
-            if (strcmp(B->elements[i], A->elements[j]) == 0) {
-                break;
-            }
-            if (j != A->size - 1) {
-                continue;
-            }
-            if (strcmp(B->elements[i], A->elements[A->size - 1]) != 0) {
-                printf("%s ", B->elements[i]);
+        for (int k = 0; k < A->size; k++) {
+            printf("%s ", A->elements[k]);
+            // printf("elem: %")
+        }
+        for (int i = 0; i < B->size; ++i) {
+            for (int j = 0; j < A->size; ++j) {
+                if (strcmp(B->elements[i], A->elements[j]) == 0) {
+                    break;
+                }
+                if (j != A->size - 1) {
+                    continue;
+                }
+                if (strcmp(B->elements[i], A->elements[A->size - 1]) != 0) {
+                    printf("%s ", B->elements[i]);
+                }
             }
         }
+        printf("\n");
+    } else {
+        for(int i = 0; i < B->size; ++i){
+            printf("%s ", B->elements);
+        }
     }
-    printf("\n");
-} 
-} else {
-    for (int k = 0; k < B->size; k++) {
-        printf("%s ", B->elements[k]);
-        // printf("elem: %")
     }
-}
 
 //intersect A, B
 void Intersect(set *A, set *B) {
