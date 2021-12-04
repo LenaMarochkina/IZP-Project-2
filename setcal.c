@@ -145,7 +145,7 @@ void Union(set *A, set *B) {
             printf("%s ", B->elements[i]);
         }
     }
-    }
+}
 
 //intersect A, B
 void Intersect(set *A, set *B) {
@@ -213,7 +213,12 @@ void Minus(set *A, set *B) {
     printf ("S ");
     if (Equals(A, B) == 1){
         printf("\n");
-    } else {
+    } else if(A->size == 0){
+        for(int i = 0; i < B->size; ++i) {
+            printf("%s ", B->elements[i]);
+        }
+    }
+    else {
         for (int i = 0; i < A->size; ++i) {
             for (int j = 0; j < B->size; ++j) {
                 if (strcmp(A->elements[i], B->elements[j]) == 0) {
@@ -303,11 +308,11 @@ bool Antisymmetric(relation *R) {
             }
         }
     }
-   if(anti > 0) {
-       return false;
-   } else {
-       return true;
-   };
+    if(anti > 0) {
+        return false;
+    } else {
+        return true;
+    };
 }
 
 //Transitive R
@@ -352,34 +357,34 @@ bool Function(relation *R) {
 
 //Domain R
 void Domain(relation *R) {
-        printf("S %s ", R->elements[0][0]);
-        for (int i = 1; i < R->size; ++i) {
-            for (int j = 0; j < i; j++) {
-                if (strcmp(R->elements[i][0], R->elements[j][0]) != 0 && (j != i - 1)) {
-                    continue;
-                } else if (strcmp(R->elements[i][0], R->elements[j][0]) != 0) {
-                    printf("%s ", R->elements[i][0]);
-                } else if (strcmp(R->elements[i][0], R->elements[j][0]) == 0) {
-                    break;
-                }
+    printf("S %s ", R->elements[0][0]);
+    for (int i = 1; i < R->size; ++i) {
+        for (int j = 0; j < i; j++) {
+            if (strcmp(R->elements[i][0], R->elements[j][0]) != 0 && (j != i - 1)) {
+                continue;
+            } else if (strcmp(R->elements[i][0], R->elements[j][0]) != 0) {
+                printf("%s ", R->elements[i][0]);
+            } else if (strcmp(R->elements[i][0], R->elements[j][0]) == 0) {
+                break;
             }
         }
+    }
 }
 
 //codomain R
 void Codomain(relation *R) {
-        printf("S %s ", R->elements[0][1]);
-        for (int i = 1; i < R->size; ++i) {
-            for (int j = 0; j < i; j++){
-                if (strcmp(R->elements[i][1],R->elements[j][1]) != 0 && (j != i - 1)) {
-                    continue;
-                } else if (strcmp(R->elements[i][1],R->elements[j][1]) != 0) {
-                    printf("%s ", R->elements[i][1]);
-                } else if (strcmp(R->elements[i][1],R->elements[j][1]) == 0) {
-                    break;
-                }
+    printf("S %s ", R->elements[0][1]);
+    for (int i = 1; i < R->size; ++i) {
+        for (int j = 0; j < i; j++){
+            if (strcmp(R->elements[i][1],R->elements[j][1]) != 0 && (j != i - 1)) {
+                continue;
+            } else if (strcmp(R->elements[i][1],R->elements[j][1]) != 0) {
+                printf("%s ", R->elements[i][1]);
+            } else if (strcmp(R->elements[i][1],R->elements[j][1]) == 0) {
+                break;
             }
         }
+    }
 }
 
 //injective R, A, B
