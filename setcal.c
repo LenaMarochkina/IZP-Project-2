@@ -210,30 +210,20 @@ bool Subset(set *A, set *B) {
 
 //minus A, B
 void Minus(set *A, set *B) {
-    printf ("S ");
-    if (Equals(A, B) == 1){
-        printf("\n");
-    } else if(A->size == 0){
-        for(int i = 0; i < B->size; ++i) {
-            printf("%s ", B->elements[i]);
-        }
-    }
-    else {
-        for (int i = 0; i < A->size; ++i) {
-            for (int j = 0; j < B->size; ++j) {
-                if (strcmp(A->elements[i], B->elements[j]) == 0) {
-                    break;
-                }
-                if (j != B->size - 1) {
-                    continue;
-                }
-                if (strcmp(A->elements[i], B->elements[B->size - 1]) != 0) {
-                    printf("%s ", A->elements[i]);
-                }
+    printf("S ");
+    bool found = false;
+    for (int i = 0; i < A->size; ++i) {
+        for (int j = 0; j < B->size; ++j) {
+            if (strcmp(A->elements[i], B->elements[j]) == 0) {
+                found = true;
+                break;
             }
         }
+        if (!found) {
+            printf("%s", A->elements[i]);
+        }
+        printf("\n");
     }
-    printf("\n");
 }
 
 //complement A
