@@ -348,7 +348,7 @@ bool Function(relation *R) {
 
 //Domain R
 void Domain(relation *R) {
-        printf("%s ", R->elements[0][0]);
+        printf("S %s ", R->elements[0][0]);
         for (int i = 1; i < R->size; ++i) {
             for (int j = 0; j < i; j++) {
                 if (strcmp(R->elements[i][0], R->elements[j][0]) != 0 && (j != i - 1)) {
@@ -365,7 +365,7 @@ void Domain(relation *R) {
 //codomain R
 void Codomain(relation *R) {
         printf("S %s ", R->elements[0][1]);
-        for (int i = 1; i < R->position; ++i) {
+        for (int i = 1; i < R->size; ++i) {
             for (int j = 0; j < i; j++){
                 if (strcmp(R->elements[i][1],R->elements[j][1]) != 0 && (j != i - 1)) {
                     continue;
