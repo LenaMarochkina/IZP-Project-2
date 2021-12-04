@@ -270,12 +270,12 @@ bool Reflexive(relation *R, universe *Universe) {
 
 //Symmetric R
 bool Symmetric(relation *R) {
-    for (int i = 0; i < R->position; ++i) {
+    for (int i = 0; i < R->size; ++i) {
         bool found = false;
         if (strcmp(R->elements[i][0], R->elements[i][1]) == 0){
             continue;
         }
-        for (int j = 0; j < R->position; ++j) {
+        for (int j = 0; j < R->size; ++j) {
             if(strcmp(R->elements[i][0], R->elements[j][1]) == 0 && strcmp(R->elements[i][1], R->elements[j][0]) == 0) {
                 found = true;
                 break;
