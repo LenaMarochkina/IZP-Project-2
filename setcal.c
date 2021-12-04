@@ -338,12 +338,16 @@ bool Function(relation *R) {
     int flag = 0;
     for (int i = 0; i < R->size; ++i) {
         for (int j = i+1; j < R->size; ++j) {
-            if (strcmp(R->elements[i][0], R->elements[j][0]) == 0 && strcmp(R->elements[i][1], R->elements[j][1]) == 0) {
+            if (strcmp(R->elements[i][0], R->elements[j][0]) == 0) {
                 flag++;
             }
         }
     }
-    return flag > 0;
+    if(flag > 0) {
+        return false;
+    } else {
+        return true;
+    };
 }
 
 //Domain R
