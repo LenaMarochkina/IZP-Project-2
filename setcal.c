@@ -113,7 +113,9 @@ bool Empty(set *A) {
 
 //card A
 void Card(set *A) {
-    printf ("%d\n", A->size);
+    if (A->size != 0) {
+        printf("%d\n", A->size);
+    }
 }
 
 //union A, B
@@ -229,7 +231,10 @@ void Complement(set *A, universe *Universe) {
     printf ("S ");
     if (A->size == Universe->size) {
         printf("\n");
-    } else {
+    } else if(A->size == 0){
+        printf("\n");
+    } else
+    {
         // printf ("\nAsize: %d\nUnisize: %d\n", A->size, Universe->size);
         for (int i = 0; i < Universe->size; ++i) {
             for (int j = 0; j < A->size; ++j) {
