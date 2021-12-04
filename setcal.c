@@ -121,6 +121,7 @@ void Card(set *A) {
 //union A, B
 void Union(set *A, set *B) {
     printf("S ");
+    if(A->size != 0) {
     for (int k = 0; k < A->size; k++) {
         printf("%s ", A->elements[k]);
         // printf("elem: %")
@@ -139,6 +140,12 @@ void Union(set *A, set *B) {
         }
     }
     printf("\n");
+} 
+} else {
+    for (int k = 0; k < B->size; k++) {
+        printf("%s ", B->elements[k]);
+        // printf("elem: %")
+    }
 }
 
 //intersect A, B
@@ -232,7 +239,9 @@ void Complement(set *A, universe *Universe) {
     if (A->size == Universe->size) {
         printf("\n");
     } else if(A->size == 0){
-        printf("\n");
+        for(int i = 0; i < Universe->size; ++i) {
+            printf("%s ", Universe->elements[i]);
+        }
     } else
     {
         // printf ("\nAsize: %d\nUnisize: %d\n", A->size, Universe->size);
