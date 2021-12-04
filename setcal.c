@@ -276,7 +276,7 @@ bool Symmetric(relation *R) {
             continue;
         }
         for (int j = 0; j < R->size; ++j) {
-            if(strcmp(R->elements[i][0], R->elements[j][1]) == 0 && strcmp(R->elements[i][1], R->elements[j][0]) == 0) {
+            if((strcmp(R->elements[i][0], R->elements[j][1]) == 0) && (strcmp(R->elements[i][1], R->elements[j][0]) == 0)) {
                 found = true;
                 break;
             }
