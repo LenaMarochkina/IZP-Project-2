@@ -142,7 +142,7 @@ void Union(set *A, set *B) {
         printf("\n");
     } else {
         for(int i = 0; i < B->size; ++i){
-            printf("%s ", B->elements);
+            printf("%s ", B->elements[i]);
         }
     }
     }
