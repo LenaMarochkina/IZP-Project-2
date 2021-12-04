@@ -282,8 +282,9 @@ bool Symmetric(relation *R) {
             return false;
         }
     }
+    return true;
 }
-            
+
 
 //Antisymmetric R
 bool Antisymmetric(relation *R) {
@@ -977,3 +978,4 @@ int main(int argc, char **argv) {
 
     return 0;
 }
+
