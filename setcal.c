@@ -213,9 +213,9 @@ void Minus(set *A, set *B) {
     printf ("S ");
     if (Equals(A, B) == 1){
         printf("\n");
-    } else if(B->size == 0){
-        for(int i = 0; i < A->size; ++i) {
-            printf("%s ", A->elements[i]);
+    } else if(A->size == 0){
+        for(int i = 0; i < B->size; ++i) {
+            printf("%s ", B->elements[i]);
         }
     }
     else {
