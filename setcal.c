@@ -282,7 +282,7 @@ bool Symmetric(relation *R) {
             return false;
         }
     }
-    return true;
+    return false;
 }
 
 
@@ -978,4 +978,3 @@ int main(int argc, char **argv) {
 
     return 0;
 }
-
