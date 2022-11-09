@@ -1,5 +1,5 @@
 # Set-Calculator
-### VUT University : IZP_2021 Project2
+### IZP_2021 Project2
 
 # Description
 
